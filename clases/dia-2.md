@@ -1,3 +1,32 @@
+### Usuario y privilegios
+
+* Cambiar el password de un usuario `root`:
+
+```console
+mysqladmin -u root -p flush-privileges password "new_pwd"
+```
+
+* Los privilegios en MySQL son una combinación de nombres de usuarios y host de los usuarios
+* El usuario `root` tiene privilegios en todo el `localhost`
+* Ejecutar comandos desde la consola:
+
+```console
+mysql -u root -p -e "SELECT User,Host FROM mysql.user;"
+```
+
+* Eliminar los usuarios que no sirven
+* Modificar los passwords en la base de datos
+
+```sql
+SET PASSWORD FOR 'elmer'@'127.0.0.1' = PASSWORD('freddy');
+```
+
+* Mostrar los privilegios de un usuario
+
+```console
+mysql -u root -p -e "SHOW GRANTS FOR 'elmer@'localhost' \G"
+```
+
 ### Storage Engines en MySQL
 
 * MySQL soporta múltiples motores de almacenamiento
@@ -110,39 +139,17 @@ Convertir una tabla de una engine a otro, usando `ALTER TABLE`:
 ALTER TABLE t ENGINE = MYISAM;
 ```
 
-### Usuario y privilegios
+#### Información de engines
 
-* Cambiar el password de un usuario `root`:
+La tabla que tiene la información sobre los engines es: `information_schema.TABLES`
 
-```console
-mysqladmin -u root -p flush-privileges password "new_pwd"
-```
+### Ejercicios
 
-* Los privilegios en MySQL son una combinación de nombres de usuarios y host de los usuarios
-* El usuario `root` tiene privilegios en todo el `localhost`
-* Ejecutar comandos desde la consola:
-
-```console
-mysql -u root -p -e "SELECT User,Host FROM mysql.user;"
-```
-
-* Eliminar los usuarios que no sirven
-* Modificar los passwords en la base de datos
-
-```console
-SET PASSWORD FOR 'elmer'@'127.0.0.1' = PASSWORD('freddy');
-```
-
-* Mostrar los privilegios de un usuario
-
-```console
-mysql -u root -p -e "SHOW GRANTS FOR 'elmer@'localhost' \G"
-```
-
-### Herramientas y utilidades para la administración
-
-[TODO]
-
-### Ejercicios 2
-
-[TODO]
+* Crear el usuario `rrhh` en base al host `127.0.0.1`
+* Crear un segundo usuario llamado `rrhh2` en base al host `localhost`
+* Crear una base de datos llamada `recursos_humanos`
+* Dar permisos sobre toda la base de datos al usuario `rrhh`
+* Crear la tabla `funcionarios` con el engine `MyISAM`
+* Crear la tabla `cargos` con el engine `InnoDB`
+* Dar permisos sobre esta tabla al usuario `rrhh2`
+* Listar los engines de la base de datos `recursos_humanos` con el nombre de tabla y el engine
