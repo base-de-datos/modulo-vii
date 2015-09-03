@@ -99,13 +99,19 @@ Lista de algunos privilegios:
  
 una lista completa de privilegios está en la documentación de mysql ([ver documentación](https://dev.mysql.com/doc/refman/5.1/en/grant.html))
 
-Algunos ejemplos
+Algunos ejemplos:
 
 ```sql
 CREATE USER 'elmer'@'localhost' IDENTIFIED BY 'elmer';
 GRANT ALL ON activos_fijos.* TO 'elmer'@'localhost';
 GRANT SELECT ON almacenes.usuarios TO 'elmer'@'localhost';
 GRANT USAGE ON *.* TO 'elmer'@'localhost' WITH MAX_QUERIES_PER_HOUR 90;
+```
+
+Mostrar los privilegios del usuario:
+
+```sql
+SHOW GRANTS;
 ```
 
 ### Storage Engines en MySQL
