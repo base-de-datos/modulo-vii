@@ -1,30 +1,111 @@
-### Usuario y privilegios
+## Contenido
 
-* Cambiar el password de un usuario `root`:
+* Más sobre usuarios y privilegios
+* Los storage engines en MySQL
+* Ejercicios
 
-```console
-mysqladmin -u root -p flush-privileges password "new_pwd"
-```
+### Más sobre usuarios y privilegios
 
 * Los privilegios en MySQL son una combinación de nombres de usuarios y host de los usuarios
 * El usuario `root` tiene privilegios en todo el `localhost`
-* Ejecutar comandos desde la consola:
 
-```console
-mysql -u root -p -e "SELECT User,Host FROM mysql.user;"
+#### Información sobre usuarios
+
+* Lista de usuarios
+
+```sql
+SELECT User, Host, Password FROM mysql.user;
 ```
 
-* Eliminar los usuarios que no sirven
+* El usuario actual
+
+```sql
+SELECT current_user();
+```
+
+* Lista de procesos
+
+```sql
+SHOW PROCESSLIST;
+```
+
+* Matar procesos
+
+```sql
+KILL [id]
+```
+
+#### Contraseñas
+
 * Modificar los passwords en la base de datos
 
 ```sql
 SET PASSWORD FOR 'elmer'@'127.0.0.1' = PASSWORD('freddy');
 ```
 
+* Cambiar el password de un usuario `root`:
+
+```sh
+mysqladmin -u root -p flush-privileges password "nueva contraseña"
+```
+
+#### Consola
+
+* Ejecutar comandos desde la consola:
+
+```sh
+mysql -u root -p -e "SELECT User,Host FROM mysql.user;"
+```
+
 * Mostrar los privilegios de un usuario
 
 ```console
 mysql -u root -p -e "SHOW GRANTS FOR 'elmer@'localhost' \G"
+```
+#### Privilegios
+
+* Los privilegios pueden realizarse de manera global: `*.*`
+* Privilegios a nivel de base de datos: `[nombre de base de datos].*`
+* Privilegios a nivel de tablas: `[nombre de la base de datos].[tabla]`
+* Privilegios a nivel de columnas: `GRANT SELECT (nombres), INSERT (nombres,cargo) ON activos_fijos.usuarios TO 'elmer'@'localhost';`
+* Privilegios de procedimientos almacenados: 
+
+```sql
+GRANT CREATE ROUTINE ON activos_fijos.* TO 'elmer'@'localhost';
+GRANT EXECUTE ON PROCEDURE activos_fijos.mi_procedimiento TO 'elmer'@'localhost';
+```
+
+El comando para asignar privilegios:
+
+```console
+GRANT [permiso] ON [nombre de bases de datos].[nombre de tabla] TO ‘[nombre de usuario]’@'localhost’;
+```
+
+El comando para revocar privilegios:
+
+```console
+REVOKE [permiso] ON [nombre de base de datos].[nombre de tabla] FROM ‘[nombre de usuario]’@‘localhost’;
+```
+Lista de algunos privilegios:
+
+* `ALL PRIVILEGES`: como mencionamos previamente esto permite a un usuario de MySQL acceder a todas las bases de datos asignadas en el sistema.
+* `CREATE`: permite crear nuevas tablas o bases de datos.
+* `DROP`: permite eliminar tablas o bases de datos.
+* `DELETE`: permite eliminar registros de tablas.
+* `INSERT`: permite insertar registros en tablas.
+* `SELECT`: permite leer registros en las tablas.
+* `UPDATE`: permite actualizar registros seleccionados en tablas.
+* `GRANT OPTION`: permite remover privilegios de usuarios.
+ 
+una lista completa de privilegios está en la documentación de mysql ([ver documentación](https://dev.mysql.com/doc/refman/5.1/en/grant.html))
+
+Algunos ejemplos
+
+```sql
+CREATE USER 'elmer'@'localhost' IDENTIFIED BY 'elmer';
+GRANT ALL ON activos_fijos.* TO 'elmer'@'localhost';
+GRANT SELECT ON almacenes.usuarios TO 'elmer'@'localhost';
+GRANT USAGE ON *.* TO 'elmer'@'localhost' WITH MAX_QUERIES_PER_HOUR 90;
 ```
 
 ### Storage Engines en MySQL
