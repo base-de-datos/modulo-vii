@@ -208,13 +208,6 @@ PREPARE statement FROM @CMD;
 EXECUTE statement;
 ```
 
-## Herramientas y utilidades para la administración
-
-* Tareas rutinarias de mantenimiento
-* Respaldo y recuperación
-* Importación de archivos CSV
-* Monitoreo de la actividad de la base de datos
-
 ## Ejercicios
 
 1. Crear la base de datos `movimientos`
