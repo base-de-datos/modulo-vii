@@ -155,7 +155,7 @@ mysqldump -u elmer -p activos_fijos > activos_fijos.sql
 ### Restauración de una base de datos
 
 ```sh
-mysqldump -u elmer -p recursos_humanos < recursos_humanos.sql
+mysql -u elmer -p recursos_humanos < recursos_humanos.sql
 ```
 
 ### Exportación en CSV
