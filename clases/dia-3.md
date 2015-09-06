@@ -221,7 +221,7 @@ EXECUTE statement;
 9. Importar el `CSV` de nombre `transacciones.csv` a la tabla `transacciones`
 10. Realizar backup a la base de datos en el archivo `movimientos.inicial.sql`
 11. Crear el usuario `registrar`
-12. Dar permisos para crear, y ejecutar procedimientos almacenados a `registrar`
+12. Dar permisos para crear procedimientos almacenados a `registrar`
 13. Crear procedimiento almacenado para adicionar `saldo` a una cuenta
   * Debe haber los parámetros de entrada: `monto`, `usuario_id`
   * El valor de entrada de `monto` debe ser positivo
@@ -233,9 +233,10 @@ EXECUTE statement;
   * No debe permitir restar más del `saldo` que tiene disponible el usuario
   * Debe actualizar el campo `saldo` de la tabla `cuentas`
   * Debe adicionar un registro en la tabla `transacciones` como `withdraw`
-15. Crear el usuario `administrador`
+15. Dar permisos sobre el usuario `registrar` para ejecutar los dos procedimientos anteriores
+16. Crear el usuario `administrador`
   * Con permisos sobre toda la base de datos `movimientos`
-16. Crear un procedimiento almacenado con un bucle infinito
+17. Crear un procedimiento almacenado con un bucle infinito
   * El procedimiento almacenado debe ser creado por el usuario `registrar`
   * El procedimiento almacenado debe ser ejecutado por el usuario `registrar`
   * Con el usuario `administrador` listar todos los procesos
