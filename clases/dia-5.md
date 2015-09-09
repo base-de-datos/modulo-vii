@@ -170,8 +170,8 @@ mysql -u root -p
 
 ```sql
 mysql> SLAVE STOP;
-mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.1',
-     > MASTER_USER='slave_user', MASTER_PASSWORD='master_slave',
+mysql> CHANGE MASTER TO MASTER_HOST='172.17.0.1',
+     > MASTER_USER='slave_user', MASTER_PASSWORD='slave_user',
      > MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=11128001;
 mysql> SLAVE START;
 mysql> SHOW SLAVE STATUS\G;
