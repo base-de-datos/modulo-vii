@@ -8,6 +8,7 @@ Se necesita implementar un sistema que permita realizar el seguimiento de activi
 
 Lista de `funcionarios`:
 
+```csv
 1;"Cameron Galloway";"eget@porttitorscelerisque.co.uk";"1998-12-05"
 2;"Alec Fox";"tristique.aliquet@vitae.org";"1989-12-17"
 3;"Alfonso Cole";"penatibus.et.magnis@tempusnon.co.uk";"1996-10-03"
@@ -28,6 +29,7 @@ Lista de `funcionarios`:
 18;"Ramona Combs";"lacus.Aliquam@Morbi.edu";"1982-11-20"
 19;"Darius Gray";"Nulla.eu.neque@necmollisvitae.com";"1994-06-02"
 20;"Leah Mann";"massa@erosNam.net";"1987-12-22"
+```
 
 **PARA CADA UNO DE LOS SIGUIENTES PUNTOS GENERAR UN ARCHIVO SQL CON LOS COMANDOS UTILIZADOS**
 
