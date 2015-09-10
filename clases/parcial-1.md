@@ -47,15 +47,15 @@ Realizar lo siguiente:
 5. Importar la lista de `funcionarios` anterior a la tabla de `funcionarios`
 6. Adicionar el campo `tareas_cantidad` a la tabla `funcionarios`:
   - tipo de dato entero
-  - valor por defecto 0
+  - valor por defecto 0 (cero)
 7. Adicionar el campo `reportes_cantidad` a la tabla `funcionarios`:
   - tipo de dato entero
-  - valor por defecto 0
+  - valor por defecto 0 (cero)
 8. Crear la tabla `tareas` con los campos:
   - `id` de tipo entero, auto-incrementable, y llave primaria
   - `descripción` de tipo cadena
   - `funcionario_id` de tipo entero (corresponde al `id` de `funcionarios`)
-  - `reportes_cantidad` de tipo entero (corresponde al `id` de `funcionarios`)
+  - `reportes_cantidad` de tipo entero y por defecto valor 0 (cero)
   - `creado_el` de tipo fecha y hora (fecha y hora de creación)
 9. Crear la tabla `reportes` con los campos:
   - `id` de tipo entero, auto-incrementable, y llave primaria
