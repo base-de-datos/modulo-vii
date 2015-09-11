@@ -190,16 +190,32 @@ host    all       all       127.0.0.1/32  md5
 ...
 ```
 
+* Habilitar en el archivo `postgresql.conf` el acceso desde otras IPs
+
+```sh
+vim /etc/postgresql/9.4/main/postgresql.conf
+```
+
+```conf
+listen_addresses = '*' 
+```
+
 * Reiniciar el servidor de PostgreSQL
 
 ```sh
 service postgresql restart
 ```
 
-* Conectarse a PostgreSQL
+* Conectarse a PostgreSQL localmente
 
 ```bash
 psql -U postgres
+```
+
+* Conectarse a PostgreSQL del servidor 192.168.1.100
+
+```bash
+psql -U postgres -h 192.168.1.100
 ```
 
 ### Creación de usuarios
@@ -256,9 +272,10 @@ DROP DATABASE mi_base_de_datos;
 
 ### Ejercicios
 
-1. Crear la base de datos `activos_fijos`
-2. Crear la tabla `usuarios (nombre, cargo)`
-3. Crear la tabla `activos (codigo, descripcion)`
-4. Generar registros de prueba
-5. Relacionar un `usuario` con sus respectivos `activos`
-6. Generar un archivo SQL con todas las consultas anteriores
+1. Crear el usuario `activos`
+2. Crear la base de datos `activos_fijos` con el dueño `activos`
+3. Crear la tabla `usuarios (nombre, cargo)`
+4. Crear la tabla `activos (codigo, descripcion)`
+5. Generar registros de prueba
+6. Relacionar un `usuario` con sus respectivos `activos`
+7. Generar un archivo SQL con todas las consultas anteriores
