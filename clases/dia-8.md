@@ -1,4 +1,4 @@
-# Privilegios y Schemas
+# Tablespaces y Schemas
 
 ## Contenido
 
