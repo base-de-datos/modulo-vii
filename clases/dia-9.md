@@ -326,26 +326,22 @@ SELECT * FROM get_all_foo();
 
 ## Ejercicios
 
-1. Realizar un procedimiento almacenado para calcular el fibonacci de un número
-2. Realizar un procedimiento almacenado para calcular el factorial de un número
-3. Crear el usuario `administrador`
-4. Crear la base de datos `movimientos` con dueño el usuario `administrador`
-5. Crear la tabla `usuarios` con los campos `id`, `inicios_de_sesion`, `institucion_id`, `paginas_gratis`
-6. Crear la tabla `cuentas` con los campos `id`, `saldo`, `usuario_id`, `creado_el`
-7. Crear la tabla `transacciones` con los campos `id`, `usuario_id`, `carga`, `accion`, `saldo`, `creado_el`
-8. Importar el `CSV` de nombre `usuarios.csv` a la tabla `usuarios`
-9. Importar el `CSV` de nombre `cuentas.csv` a la tabla `cuentas`
-10. Importar el `CSV` de nombre `transacciones.csv` a la tabla `transacciones`
-11. Crear procedimiento almacenado para adicionar `saldo` a una cuenta
+1. Crear el usuario `administrador`
+2. Crear la base de datos `movimientos` con dueño el usuario `administrador`
+3. Crear la tabla `usuarios` con los campos `id`, `inicios_de_sesion`, `institucion_id`, `paginas_gratis`
+4. Crear la tabla `cuentas` con los campos `id`, `saldo`, `usuario_id`, `creado_el`
+5. Crear la tabla `transacciones` con los campos `id`, `usuario_id`, `carga`, `accion`, `saldo`, `creado_el`
+6. Importar el `CSV` de nombre `usuarios.csv` a la tabla `usuarios`
+7. Importar el `CSV` de nombre `cuentas.csv` a la tabla `cuentas`
+8. Importar el `CSV` de nombre `transacciones.csv` a la tabla `transacciones`
+9. Crear procedimiento almacenado para adicionar `saldo` a una cuenta
   * Debe haber los parámetros de entrada: `monto`, `usuario_id`
   * El valor de entrada de `monto` debe ser positivo
   * Debe actualizar el campo `saldo` de la tabla `cuentas`
   * Debe adicionar un registro en la tabla `transacciones` como `deposit`
-12. Crear procedimiento almacenado para restar `saldo` de una cuenta
+10. Crear procedimiento almacenado para restar `saldo` de una cuenta
   * Debe haber dos parámetros de entrada: `monto`, `usuario_id`
   * El valor de entrada de `monto` debe ser negativo
   * No debe permitir restar más del `saldo` que tiene disponible el usuario
   * Debe actualizar el campo `saldo` de la tabla `cuentas`
   * Debe adicionar un registro en la tabla `transacciones` como `withdraw`
-13. Crear el usuario `administrador`
-  * Con permisos sobre toda la base de datos `movimientos`
