@@ -345,5 +345,3 @@ SELECT * FROM get_all_foo();
   * No debe permitir restar más del `saldo` que tiene disponible el usuario
   * Debe actualizar el campo `saldo` de la tabla `cuentas`
   * Debe adicionar un registro en la tabla `transacciones` como `withdraw`
-11. Crear el usuario `administrador`
-  * Con permisos sobre toda la base de datos `movimientos`
