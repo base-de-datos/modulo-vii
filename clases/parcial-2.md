@@ -12,14 +12,14 @@ Implementar una base de datos para auditoría de las transacciones de un banco:
 4. Crear la tabla `movimientos`
   - `id` de tipo entero, autoincrementable y llave primaria
   - `monto` de tipo entero, que pueden ser montos de ingreso o salida
-  - `cuenta_id` de tipo cadena, hace referencia a la tabla `cuentas`
+  - `cuenta_id` de tipo entero, hace referencia a la tabla `cuentas`
 5. Crear la tabla `auditoria`
   - `id` de tipo entero, autoincrementable y llave primaria
   - `nombre_completo` de tipo cadena, que es `nombres` y `apellidos` del cliente
   - `monto` de tipo entero
   - `saldo` de tipo entero  
   - `usuario_bd` de tipo cadena, usuario actual de la base de datos
-  - `movimiento_id` de tipo cadena, hace referencia a la tabla `movimientos`
+  - `movimiento_id` de tipo entero, hace referencia a la tabla `movimientos`
 
 Es necesario que la base de datos responda a lo siguiente:
 
@@ -27,4 +27,4 @@ Es necesario que la base de datos responda a lo siguiente:
 2. Con cada inserción en la tabla de `movimientos`, se debe actualizar el `saldo` de la cuenta correspondiente.
 3. Con cada inserción en la tabla de `movimientos`, se debe registrar lo que se está realizando con los campos requeridos.
 
-Implementar el procedimiento almacenado o el trigger que solucione los enunciados anteriores.
+Implementar el/los procedimiento(s) almacenado(s) o el/los trigger(s) que solucionen los enunciados anteriores.
