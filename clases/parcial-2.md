@@ -25,6 +25,6 @@ Es necesario que la base de datos responda a lo siguiente:
 
 1. Cuando se crear un registro en la tabla `cuentas`, debe crear en `movimientos` un registro, de tal manera que tenga un `monto` cero (0) para el cliente.
 2. Con cada inserción en la tabla de `movimientos`, se debe actualizar el `saldo` de la cuenta correspondiente.
-3. Con cada inserción en la tabla de `movimientos`, se debe registrar lo que se está realizando con los campos requeridos.
+3. Con cada inserción en la tabla de `movimientos`, se debe registrar lo que se está realizando con los campos requeridos en la tabla de `auditoria`.
 
 Implementar el/los procedimiento(s) almacenado(s) o el/los trigger(s) que solucionen los enunciados anteriores.
